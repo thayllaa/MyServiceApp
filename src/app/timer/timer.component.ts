@@ -10,6 +10,7 @@ export class TimerComponent implements OnInit {
 
   constructor(public timer: TimerService) {
     this.timer.start(1000);
+    this.timer.stop();
   }
 
   ngOnInit() {
