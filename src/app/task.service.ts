@@ -29,6 +29,16 @@ export class TaskService {
       day: "Quinta-feira",
       hour: "19h - 22h30",
     },
+    {
+      title: "TCC II",
+      day: "Sexta-feira",
+      hour: "21h - 22h30",
+    },
+    {
+      title: "TCC I",
+      day: "Sábado",
+      hour: "11h30 - 13h",
+    },
   ];
 
   constructor() {}
