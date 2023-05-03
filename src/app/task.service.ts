@@ -44,7 +44,7 @@ export class TaskService {
   constructor() {}
 
   add(title: string, day: string, hour:string, ) {
-    this.list.push({ title, day, hour});
+    this.list.push({ title, day, hour });
   }
 
   remove(index: number) {

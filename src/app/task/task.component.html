@@ -23,9 +23,7 @@
   Término: <input type="time" class="form-control" #hour /><br>
 </form><br>
 
-<button 
-(click)="list.add(title.value, this.day, this.hour);
-    title.value = ''; day.selectedIndex = 0; hour.value = ''; ">
+<button (click)="list.add(title.value, day.value, hour.value); title.value = ''; day.value = ''; hour.value = ''; ">
   Adicionar
 </button>
 <br> <br>
