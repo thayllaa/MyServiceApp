@@ -9,6 +9,7 @@ import { ThayllaComponent } from './thaylla/thaylla.component';
 import { TimerComponent } from './timer/timer.component';
 import { TaskComponent } from './task/task.component';
 import { TaskService } from './task.service';
+import { TimerService } from './timer.service';
 
 @NgModule({
   imports: [
@@ -30,6 +31,6 @@ import { TaskService } from './task.service';
     TaskComponent
   ],
   bootstrap: [RootComponent],
-  providers: [ TaskService, TimerComponent ]
+  providers: [ TaskService, TimerService ]
 })
 export class AppModule {}

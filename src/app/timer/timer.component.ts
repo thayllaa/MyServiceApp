@@ -8,10 +8,7 @@ import { TimerService } from '../timer.service';
 })
 export class TimerComponent implements OnInit {
 
-  constructor(public timer: TimerService) {
-    this.timer.start(1000);
-    this.timer.stop();
-  }
+  constructor(public timer: TimerService) {}
 
   ngOnInit() {
   }
