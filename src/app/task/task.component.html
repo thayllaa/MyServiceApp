@@ -1,6 +1,5 @@
 <h5> Tasks</h5>
 
-
 <form>
   <label> Dia da Semana: </label>
   <select #day>
@@ -39,9 +38,9 @@
     <th> Horário </th>
   </tr>
   <tr *ngFor="let disciplina of list.getList(); index as i">
-    <td> {{ task.title }} </td>
-    <td> {{ task.day }} </td>
-    <td> {{ task.hour }} </td>
+    <td> {{ tasks.title }} </td>
+    <td> {{ tasks.day }} </td>
+    <td> {{ tasks.hour }} </td>
     <button (click)="list.remove(i)"> Deletar </button>
 </tr>
 </table>
