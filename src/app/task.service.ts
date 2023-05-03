@@ -8,13 +8,8 @@ interface Tasks {
 export class TaskService {
   list: Array<Tasks> = [
     {title: 'Banco de Dados II'},
-    {title: 'Desenvolvimento para Servidores I'},
     {title: 'Desenvolvimento para Servidores II'},
-    {title: 'Desenvolvimento para Dispositivos Movéis I'},
-    {title: 'Negócios, Marketing e Eletrônicos'},
     {title: 'Tópicos Especiais II'},
-    {title: 'Prototipagem e Testes'},
-    {title: 'Programa de Graduação'},
   ];
 
   constructor() {}
