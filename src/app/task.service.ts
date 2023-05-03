@@ -43,15 +43,15 @@ export class TaskService {
 
   constructor() {}
 
-  getList() {
-    return this.list;
-  }
-
   add(title: string, day: string, hour:string, ) {
     this.list.push({ title, day, hour});
   }
 
   remove(index: number) {
     this.list.splice(index, 1);
+  }
+  
+  getList() {
+    return this.list;
   }
 }
