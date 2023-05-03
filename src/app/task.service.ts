@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 interface Tasks {
-  title: String;
+  name: String;
   day: string;
   hour: string;
 }
@@ -10,32 +10,32 @@ interface Tasks {
 export class TaskService {
   list: Array<Tasks> = [
     {
-      title: "Projeto de Encontrabilidade",
+      name: "Projeto de Encontrabilidade",
       day: "Segunda-feira",
       hour: "19h - 22h30",
     },
     {
-      title: "Banco de Dados II",
+      name: "Banco de Dados II",
       day: "Quarta-feira",
       hour: "9h30 - 13h",
     },
     {
-      title: "Tópicos Especiais II",
+      name: "Tópicos Especiais II",
       day: "Sexta-feira",
       hour: "19h - 22h30",
     },
     {
-      title: "Desenvolvimento para Servidores II",
+      name: "Desenvolvimento para Servidores II",
       day: "Quinta-feira",
       hour: "19h - 22h30",
     },
     {
-      title: "TCC II",
+      name: "TCC II",
       day: "Sexta-feira",
       hour: "21h - 22h30",
     },
     {
-      title: "TCC I",
+      name: "TCC I",
       day: "Sábado",
       hour: "11h30 - 13h",
     },
@@ -43,8 +43,8 @@ export class TaskService {
 
   constructor() {}
 
-  add(title: string, day: string, hour:string, ) {
-    this.list.push({ title, day, hour });
+  add(name: string, day: string, hour:string, ) {
+    this.list.push({ name, day, hour });
   }
 
   remove(index: number) {
