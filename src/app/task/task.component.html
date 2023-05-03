@@ -24,7 +24,7 @@
 </form><br>
 
 <button
-  (click)="this.list.add(title.value, day.value, hour.value);
+  (click)="this.list.add(title.value, this.day, this.hour);
     title.value = ''; day.selectedIndex = 0; hour.value = '';">
   Adicionar
 </button>
@@ -36,7 +36,7 @@
     <th> Dia da Semana </th>
     <th> Horário </th>
   </tr>
-  <tr *ngFor="let disciplina of list.getList(); index as i">
+  <tr *ngFor="let tasks of list.getList(); index as i">
     <td> {{ tasks.title }} </td>
     <td> {{ tasks.day }} </td>
     <td> {{ tasks.hour }} </td>
