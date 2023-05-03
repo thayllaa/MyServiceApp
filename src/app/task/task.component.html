@@ -34,18 +34,14 @@
 
 <table class="table">
   <tr>
-    <th> Id </th>
     <th> Nome </th>
     <th> Dia da Semana </th>
     <th> Horário </th>
-    <th> Ementa </th>
   </tr>
   <tr *ngFor="let disciplina of list.getList(); index as i">
-    <td> {{ disciplina.id }} </td>
-    <td> {{ disciplina.name }} </td>
-    <td> {{ disciplina.day }} </td>
-    <td> {{ disciplina.hour }} </td>
-    <td><a [routerLink]="['/detalhes', i]"> Detalhes </a></td>
+    <td> {{ task.title }} </td>
+    <td> {{ task.day }} </td>
+    <td> {{ task.hour }} </td>
     <button (click)="list.remove(i)"> Deletar </button>
 </tr>
 </table>
