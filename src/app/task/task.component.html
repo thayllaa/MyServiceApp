@@ -24,7 +24,7 @@
 </form><br>
 
 <button
-  (click)="list.add(title.value, day.value, hour.value);
+  (click)="this.list.add(title.value, day.value, hour.value);
     title.value = ''; day.selectedIndex = 0; hour.value = '';">
   Adicionar
 </button>
