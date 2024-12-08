@@ -22,6 +22,12 @@ export class TimerService {
     }
   }
 
+  restart(ms: number) {
+    this.stop();
+    this.counter = 0;
+    this.start(ms);
+  }
+
   getCount() {
     return this.counter;
   }

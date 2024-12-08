@@ -1,44 +1,72 @@
-<h5> Tasks</h5>
+<div class="container">
+  <h5 class="title">TASK</h5>
 
-<form>
-<label> Dia da Semana: </label>
-<select #day>
-  <option value="Segunda-feira">Segunda-feira</option>
-  <option value="Terça-feira">Terça-feira</option>
-  <option value="Quarta-feira">Quarta-feira</option>
-  <option value="Quinta-feira">Quinta-feira</option>
-  <option value="Sexta-feira">Sexta-feira</option>
-  <option value="Sábado">Sábado</option>
-</select>
+  <form class="form">
+    <div class="form-group">
+      <label for="day">Dia da Semana:</label>
+      <select id="day" #day>
+        <option value="Segunda-feira">Segunda-feira</option>
+        <option value="Terça-feira">Terça-feira</option>
+        <option value="Quarta-feira">Quarta-feira</option>
+        <option value="Quinta-feira">Quinta-feira</option>
+        <option value="Sexta-feira">Sexta-feira</option>
+        <option value="Sábado">Sábado</option>
+      </select>
+    </div>
 
-<br>
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Nome da disciplina"
+        #name
+      />
+    </div>
 
-<label> Nome: </label>
-<input type="text" class="form-control" id="autoSizingInputGroup"
-  placeholder="Nome da disciplina" #name/>
-<br>
+    <div class="form-group">
+      <label>Horário:</label>
+      <div class="time-inputs">
+        <div>
+          <label for="start-time">Início:</label>
+          <input type="time" id="start-time" class="form-control" #hour />
+        </div>
+        <div>
+          <label for="end-time">Término:</label>
+          <input type="time" id="end-time" class="form-control" #hour />
+        </div>
+      </div>
+    </div>
 
-<label> Horário </label><br>
-Início: <input type="time" class="form-control" #hour />
-Término: <input type="time" class="form-control" #hour /><br>
-</form><br>
+    <button
+      type="button"
+      class="btn"
+      (click)="list.add(name.value, day.value, hour.value);
+               name.value = ''; day.selectedIndex = 0; hour.value = ''; "
+    >
+      Adicionar
+    </button>
+  </form>
 
-<button
-(click)="list.add(name.value, day.value, hour.value);
-        name.value = ''; day.selectedIndex = 0; hour.value = ''; ">
-Adicionar
-</button>
-
-<table>
-<tr>
-  <th> Nome </th>
-  <th> Dia da Semana </th>
-  <th> Horário </th>
-</tr>
-<tr *ngFor="let task of list.getList(); index as i">
-  <td> {{ task.name }} </td>
-  <td> {{ task.day }} </td>
-  <td> {{ task.hour }} </td>
-  <button (click)="list.remove(i)"> Deletar </button>
-</tr>
-</table>
+  <table class="task-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Dia da Semana</th>
+        <th>Horário</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of list.getList(); index as i">
+        <td>{{ task.name }}</td>
+        <td>{{ task.day }}</td>
+        <td>{{ task.hour }}</td>
+        <td>
+          <button class="btn-delete" (click)="list.remove(i)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

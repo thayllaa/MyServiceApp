@@ -1,0 +1,77 @@
+/* Configuração geral */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da página */
+.page-title {
+  font-size: 1.8rem;
+  color: #d19247;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Instruções */
+.instructions {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.instructions strong {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Lista de tarefas */
+.task-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.task-list li {
+  display: flex; /* Alinha os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+  background-color: #f8f9fa;
+  border-left: 4px solid #a46e39;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.task-list .icon {
+  font-size: 1.5rem;
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+.task-list .task-text {
+  flex: 1; /* Faz o texto ocupar o espaço restante */
+}
+
+.task-list li em {
+  font-style: italic;
+  text-decoration: underline;
+  color: #d19247;
+}
+
+/* Emojis */
+.task-list li::before {
+  content: '🔸';
+  margin-right: 0.2rem;
+  font-size: 0.9rem;
+}

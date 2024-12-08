@@ -1,5 +1,9 @@
-<h5>Timer</h5>
-{{ timer.getCount() }}s
-<br />
-<button (click)="timer.start(1000)">Start</button>
-<button (click)="timer.stop()">Stop</button>
+<div class="timer">
+  <h5>TIMER</h5>
+  <div class="timer-display">{{ timer.getCount() }}s</div>
+  <div class="timer-controls">
+    <button (click)="timer.start(100)" class="start-btn">Start</button>
+    <button (click)="timer.restart(100)" class="restart-btn">Restart</button>
+    <button (click)="timer.stop()" class="stop-btn">Stop</button>
+  </div>
+</div>
