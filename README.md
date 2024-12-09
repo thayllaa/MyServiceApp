@@ -1,4 +1,4 @@
-# 📌 MyServiceApp
+# 📌 My Service App
 
 ## 📝 Descrição
 O My Service App é uma aplicação web construída com Angular, projetada para ajudar os usuários a gerenciar suas atividades diárias. Com funcionalidades como temporizador, controle de tarefas acadêmicas e um menu de navegação intuitivo, a aplicação visa facilitar o acompanhamento de atividades e a organização do dia a dia.
