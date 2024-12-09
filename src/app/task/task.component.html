@@ -1,10 +1,11 @@
 <div class="container">
   <h5 class="title">TASK</h5>
 
-  <form [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
+  <form class="form" [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="day">Dia da Semana:</label>
+      <label class="dayLabel" for="day">Dia da Semana:</label>
       <select id="day" formControlName="dia">
+        <option value="">Selecione o dia</option>
         <option value="Segunda-feira">Segunda-feira</option>
         <option value="Terça-feira">Terça-feira</option>
         <option value="Quarta-feira">Quarta-feira</option>
@@ -20,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Nome:</label>
+      <label class="nameLabel" for="name">Nome da Tarefa:</label>
       <input
         type="text"
         class="form-control"
@@ -36,7 +37,7 @@
     </div>
 
     <div class="form-group">
-      <label>Horário:</label>
+      <label class="hourLabel" for="hour">Horário da Tarefa:</label>
       <div class="time-inputs">
         <div>
           <label for="start-time">Início:</label>
@@ -76,7 +77,7 @@
     </div>
 
     <button type="submit" class="btn" [disabled]="!tarefaForm.valid">
-      Adicionar Tarefa
+      Adicionar
     </button>
   </form>
 
