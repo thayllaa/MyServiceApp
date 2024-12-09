@@ -1,10 +1,10 @@
 <div class="container">
   <h5 class="title">TASK</h5>
 
-  <form class="form">
+  <form [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="day">Dia da Semana:</label>
-      <select id="day" #day>
+      <select id="day" formControlName="dia">
         <option value="Segunda-feira">Segunda-feira</option>
         <option value="Terça-feira">Terça-feira</option>
         <option value="Quarta-feira">Quarta-feira</option>
@@ -12,6 +12,11 @@
         <option value="Sexta-feira">Sexta-feira</option>
         <option value="Sábado">Sábado</option>
       </select>
+      <div
+        *ngIf="tarefaForm.get('dia').invalid && tarefaForm.get('dia').touched"
+      >
+        Dia é obrigatório.
+      </div>
     </div>
 
     <div class="form-group">
@@ -20,9 +25,14 @@
         type="text"
         class="form-control"
         id="name"
-        placeholder="Nome da disciplina"
-        #name
+        placeholder="Nome da Disciplina"
+        formControlName="nome"
       />
+      <div
+        *ngIf="tarefaForm.get('nome').invalid && tarefaForm.get('nome').touched"
+      >
+        Nome é obrigatório.
+      </div>
     </div>
 
     <div class="form-group">
@@ -30,21 +40,42 @@
       <div class="time-inputs">
         <div>
           <label for="start-time">Início:</label>
-          <input type="time" id="start-time" class="form-control" #hour />
+          <input
+            type="time"
+            id="start-time"
+            class="form-control"
+            formControlName="horaInicio"
+          />
+          <div
+            *ngIf="
+              tarefaForm.get('horaInicio').invalid &&
+              tarefaForm.get('horaInicio').touched
+            "
+          >
+            Horário de início é obrigatório.
+          </div>
         </div>
         <div>
           <label for="end-time">Término:</label>
-          <input type="time" id="end-time" class="form-control" #hour />
+          <input
+            type="time"
+            id="end-time"
+            class="form-control"
+            formControlName="horaFim"
+          />
+          <div
+            *ngIf="
+              tarefaForm.get('horaInicio').invalid &&
+              tarefaForm.get('horaInicio').touched
+            "
+          >
+            Horário de início é obrigatório.
+          </div>
         </div>
       </div>
     </div>
 
-    <button
-      type="button"
-      class="btn"
-      (click)="list.add(name.value, day.value, hour.value);
-               name.value = ''; day.selectedIndex = 0; hour.value = ''; "
-    >
+    <button type="submit" class="btn" [disabled]="!tarefaForm.valid">
       Adicionar
     </button>
   </form>
@@ -59,12 +90,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let task of list.getList(); index as i">
-        <td>{{ task.name }}</td>
-        <td>{{ task.day }}</td>
-        <td>{{ task.hour }}</td>
+      <tr *ngFor="let task of lista; index as i">
+        <td>{{ task.nome }}</td>
+        <td>{{ task.dia }}</td>
+        <td>{{ task.horaInicio }} - {{ task.horaFim }}</td>
         <td>
-          <button class="btn-delete" (click)="list.remove(i)">Deletar</button>
+          <button class="btn-delete" (click)="removeTask(i)">Deletar</button>
         </td>
       </tr>
     </tbody>

@@ -10,11 +10,14 @@ import { TimerComponent } from './timer/timer.component';
 import { TaskComponent } from './task/task.component';
 import { TaskService } from './task.service';
 import { TimerService } from './timer.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'thaylla', component: ThayllaComponent },
@@ -28,9 +31,9 @@ import { TimerService } from './timer.service';
     HomeComponent,
     ThayllaComponent,
     TimerComponent,
-    TaskComponent
+    TaskComponent,
   ],
   bootstrap: [RootComponent],
-  providers: [ TaskService, TimerService ]
+  providers: [TaskService, TimerService],
 })
 export class AppModule {}
